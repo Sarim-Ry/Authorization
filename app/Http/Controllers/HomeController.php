@@ -42,25 +42,12 @@ class HomeController extends Controller
 
     public function updated($id, Request $request)
     {
-        $telco_operator = "/(011)[0-9]{6,7}+$/";
-        $phone = $request->phone_number;
-        if(empty($phone)){
-            return false;
-        }
-        
-        if(preg_match($telco_operator, $phone)) {
-            return true;
-        }else {
-            return false;
-        }
-        
-      
-
+        $telco_operator = "011";
         $this->validate($request, [
             'first_name' => 'required|string|max:35',
             'last_name' => 'required|string|max:35',
             'email' => 'required|email',
-            'phone_number' => 'required|regex:/(011)[0-9]{6,7}+$/',
+            'phone_number' => 'required|regex:/(0)[0-9]{8,9}+$/',
             'password' => 'confirmed',
         ]);
 

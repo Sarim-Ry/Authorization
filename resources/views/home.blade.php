@@ -19,6 +19,7 @@
                             <thead>
                                 <th>First Name</th>
                                 <th>Last Name</th>
+                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Action</th>
@@ -29,6 +30,7 @@
                                 <tr>
                                     <td>{!! $user->first_name !!}</td>
                                     <td>{!! $user->last_name !!}</td>
+                                    <td>{!! $user->user_name !!}</td>
                                     <td>{!! $user->email !!}</td>
                                     <td>{!! $user->phone_number !!}</td>
                                     <td>
