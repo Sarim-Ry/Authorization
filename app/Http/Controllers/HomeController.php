@@ -25,19 +25,20 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::get();
-        return view('home')
-        ->with('users', $users);
+
+        return view('home')->with('users', $users);
     }
 
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        if(empty($user))
+
+        if( empty($user) )
         {
             return redirect()->route('home');
         }
-        return view('auth.edit')
-        ->with('user', $user);
+
+        return view('auth.edit')->with('user', $user);
     }
 
     public function updated($id, Request $request)
